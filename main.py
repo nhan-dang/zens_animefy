@@ -77,7 +77,7 @@ def animefy_face_image_based_on_style(img, stylegan2_ckpt_path, e4e_ckpt_path, a
 	PIL_image.save("animefy_results.jpg")
 
 if __name__ == "__main__":
-	img_path = os.path.join(os.getcwd(), "test.jpg")
+	img_path = os.path.join(os.getcwd(), "face.jpg")
 	img = Image.open(img_path)
 	stylegan2_ckpt_path = os.path.join(os.getcwd(), "stylegan2-ffhq-config-f.pt")
 	e4e_ckpt_path = os.path.join(os.getcwd(), "e4e_ffhq_encode.pt")
