@@ -1,0 +1,9 @@
+torch
+numpy
+lpips
+dlib
+opencv-python
+ninja
+PyDrive
+PyDrive2
+oauth2client
