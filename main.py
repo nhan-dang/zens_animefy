@@ -20,9 +20,9 @@ import scipy.ndimage
 
 
 @ torch.no_grad()
-def modified_projection(img, e4e_ckpt_path, device='cpu'):
+def modified_projection(img, e4e_encode_path, device='cpu'):
 	e4e_ckpt = torch.load(e4e_encode_path, map_location='cpu')
-    opts = ckpt['opts']
+    opts = e4e_ckpt['opts']
     opts['checkpoint_path'] = e4e_encode_path
     opts= Namespace(**opts)
     net = pSp(opts, device).eval().to(device)
@@ -66,7 +66,7 @@ def animefy_face_image_based_on_style(img, stylegan2_ckpt_path, e4e_ckpt_path, a
 	# Normalize and write output to PIL image
 	output = utils.make_grid(output, normalize=True)
 	if not isinstance(output, torch.Tensor):
-    output = transforms.ToTensor()(output).unsqueeze(0)
+		output = transforms.ToTensor()(output).unsqueeze(0)
 	if output.is_cuda:
 	    output = output.cpu()
 	if output.dim() == 4:
