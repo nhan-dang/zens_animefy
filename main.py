@@ -61,7 +61,7 @@ def animefy_face_image_based_on_style(img, stylegan2_ckpt_path, e4e_ckpt_path, a
 	seed = 4000
 	torch.manual_seed(seed)
 	with torch.no_grad():
-	    generator.eval(
+	    generator.eval()
 	    output = generator(img_projection, input_is_latent=True)
 	# Normalize and write output to PIL image
 	output = utils.make_grid(output, normalize=True)
