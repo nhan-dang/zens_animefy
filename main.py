@@ -1,5 +1,5 @@
 import torch
-import torchvision.transforms as transforms, utils
+from torchvision import transforms, utils
 import os
 import sys
 import inspect
